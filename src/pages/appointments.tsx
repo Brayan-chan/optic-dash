@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Search, Plus, Edit, Trash, Calendar } from "lucide-react";
+import { Search, Plus, Edit, Trash, Calendar, Check, X } from "lucide-react";
 
 interface Appointment {
   id: string;
@@ -149,6 +149,15 @@ export default function Appointments() {
                           variant="outline"
                           className={getStatusColor(appointment.status)}
                         >
+                          {appointment.status === "scheduled" && (
+                            <Calendar className="h-3 w-3 mr-1 inline" />
+                          )}
+                          {appointment.status === "completed" && (
+                            <Check className="h-3 w-3 mr-1 inline" />
+                          )}
+                          {appointment.status === "cancelled" && (
+                            <X className="h-3 w-3 mr-1 inline" />
+                          )}
                           {appointment.status.charAt(0).toUpperCase() +
                             appointment.status.slice(1)}
                         </Badge>

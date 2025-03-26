@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Search, Plus, Eye } from "lucide-react";
+import { Search, Plus, Eye, Check, Clock, RefreshCcw } from "lucide-react";
 
 interface Sale {
   id: string;
@@ -132,6 +132,15 @@ export default function Sales() {
                           variant="outline"
                           className={getStatusColor(sale.status)}
                         >
+                          {sale.status === "completed" && (
+                            <Check className="h-3 w-3 mr-1 inline" />
+                          )}
+                          {sale.status === "pending" && (
+                            <Clock className="h-3 w-3 mr-1 inline" />
+                          )}
+                          {sale.status === "refunded" && (
+                            <RefreshCcw className="h-3 w-3 mr-1 inline" />
+                          )}
                           {sale.status.charAt(0).toUpperCase() +
                             sale.status.slice(1)}
                         </Badge>
