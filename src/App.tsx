@@ -10,6 +10,10 @@ const Products = lazy(() => import("./pages/products"));
 const Appointments = lazy(() => import("./pages/appointments"));
 const Sales = lazy(() => import("./pages/sales"));
 const Reports = lazy(() => import("./pages/reports"));
+const Repairs = lazy(() => import("./pages/repairs"));
+const NewRepair = lazy(() => import("./pages/repairs/new"));
+const Agreements = lazy(() => import("./pages/agreements"));
+const NewAgreement = lazy(() => import("./pages/agreements/new"));
 
 function App() {
   return (
@@ -28,6 +32,10 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/appointments" element={<Appointments />} />
           <Route path="/sales" element={<Sales />} />
+          <Route path="/repairs" element={<Repairs />} />
+          <Route path="/repairs/new" element={<NewRepair />} />
+          <Route path="/agreements" element={<Agreements />} />
+          <Route path="/agreements/new" element={<NewAgreement />} />
           <Route path="/reports" element={<Reports />} />
 
           {/* Fallback route */}

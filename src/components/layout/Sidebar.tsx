@@ -11,6 +11,8 @@ import {
   Settings,
   ChevronDown,
   ChevronRight,
+  Wrench,
+  FileText,
 } from "lucide-react";
 
 type NavItem = {
@@ -60,6 +62,24 @@ const navItems: NavItem[] = [
     submenu: [
       { title: "All Sales", href: "/sales" },
       { title: "New Sale", href: "/sales/new" },
+    ],
+  },
+  {
+    title: "Repairs",
+    href: "/repairs",
+    icon: <Wrench className="h-5 w-5" />,
+    submenu: [
+      { title: "All Repairs", href: "/repairs" },
+      { title: "New Repair", href: "/repairs/new" },
+    ],
+  },
+  {
+    title: "Agreements",
+    href: "/agreements",
+    icon: <FileText className="h-5 w-5" />,
+    submenu: [
+      { title: "All Agreements", href: "/agreements" },
+      { title: "Add Agreement", href: "/agreements/new" },
     ],
   },
   {
