@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Bell, Search, Menu, User, LogOut } from "lucide-react";
+import { Search, Menu, User, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -10,6 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import NotificationsDropdown from "@/components/notifications/NotificationsDropdown";
 
 export default function Header({
   toggleSidebar,
@@ -17,7 +18,6 @@ export default function Header({
   toggleSidebar: () => void;
 }) {
   const navigate = useNavigate();
-  const [notifications] = useState(3); // Mock notification count
 
   const handleLogout = () => {
     // For demo purposes, don't actually log out
@@ -50,16 +50,7 @@ export default function Header({
         </div>
 
         <div className="flex items-center space-x-4">
-          <div className="relative">
-            <Button variant="ghost" size="icon">
-              <Bell className="h-5 w-5" />
-              {notifications > 0 && (
-                <span className="absolute top-0 right-0 h-4 w-4 bg-red-500 rounded-full flex items-center justify-center text-white text-xs">
-                  {notifications}
-                </span>
-              )}
-            </Button>
-          </div>
+          <NotificationsDropdown />
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>

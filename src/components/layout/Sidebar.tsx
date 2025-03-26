@@ -13,6 +13,8 @@ import {
   ChevronRight,
   Wrench,
   FileText,
+  Stethoscope,
+  FileSignature,
 } from "lucide-react";
 
 type NavItem = {
@@ -27,6 +29,11 @@ const navItems: NavItem[] = [
     title: "Dashboard",
     href: "/dashboard",
     icon: <Home className="h-5 w-5" />,
+  },
+  {
+    title: "Medical Dashboard",
+    href: "/medical-dashboard",
+    icon: <Stethoscope className="h-5 w-5" />,
   },
   {
     title: "Customers",
@@ -53,6 +60,15 @@ const navItems: NavItem[] = [
     submenu: [
       { title: "All Appointments", href: "/appointments" },
       { title: "Schedule New", href: "/appointments/new" },
+    ],
+  },
+  {
+    title: "Prescriptions",
+    href: "/prescriptions",
+    icon: <FileSignature className="h-5 w-5" />,
+    submenu: [
+      { title: "All Prescriptions", href: "/prescriptions" },
+      { title: "New Prescription", href: "/prescriptions/new" },
     ],
   },
   {

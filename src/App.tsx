@@ -5,6 +5,7 @@ import routes from "tempo-routes";
 // Lazy load pages for better performance
 const Home = lazy(() => import("./components/home"));
 const Dashboard = lazy(() => import("./pages/dashboard"));
+const MedicalDashboard = lazy(() => import("./pages/medicalDashboard"));
 const Customers = lazy(() => import("./pages/customers"));
 const Products = lazy(() => import("./pages/products"));
 const Appointments = lazy(() => import("./pages/appointments"));
@@ -14,6 +15,7 @@ const Repairs = lazy(() => import("./pages/repairs"));
 const NewRepair = lazy(() => import("./pages/repairs/new"));
 const Agreements = lazy(() => import("./pages/agreements"));
 const NewAgreement = lazy(() => import("./pages/agreements/new"));
+const NewPrescription = lazy(() => import("./pages/prescriptions/new"));
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/dashboard" />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/medical-dashboard" element={<MedicalDashboard />} />
           <Route path="/customers" element={<Customers />} />
           <Route path="/products" element={<Products />} />
           <Route path="/appointments" element={<Appointments />} />
@@ -36,6 +39,7 @@ function App() {
           <Route path="/repairs/new" element={<NewRepair />} />
           <Route path="/agreements" element={<Agreements />} />
           <Route path="/agreements/new" element={<NewAgreement />} />
+          <Route path="/prescriptions/new" element={<NewPrescription />} />
           <Route path="/reports" element={<Reports />} />
 
           {/* Fallback route */}
