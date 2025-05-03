@@ -15,28 +15,28 @@ export default function LowStockAlert() {
   const products: Product[] = [
     {
       id: "1",
-      name: "Designer Frames - Model X1",
+      name: "Monturas de Diseño - Modelo X1",
       category: "Frames",
       currentStock: 3,
       minStock: 5,
     },
     {
       id: "2",
-      name: "Contact Lens Solution 500ml",
+      name: "Solución para Lentes de Contacto 500ml",
       category: "Solutions",
       currentStock: 2,
       minStock: 10,
     },
     {
       id: "3",
-      name: "Cleaning Cloth Pack",
+      name: "Kit de Paños de Limpieza",
       category: "Accessories",
       currentStock: 4,
       minStock: 15,
     },
     {
       id: "4",
-      name: "Transition Lenses - Grade A",
+      name: "Lentes de Transición - Calidad A",
       category: "Lenses",
       currentStock: 5,
       minStock: 8,
@@ -46,9 +46,9 @@ export default function LowStockAlert() {
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle>Low Stock Alert</CardTitle>
+        <CardTitle>Alerta de Stock Bajo</CardTitle>
         <Button variant="outline" size="sm">
-          Order Inventory
+          Pedir Inventario
         </Button>
       </CardHeader>
       <CardContent>
@@ -68,7 +68,7 @@ export default function LowStockAlert() {
                       {product.category}
                     </Badge>
                     <span className="text-sm text-red-500">
-                      {product.currentStock} / {product.minStock} units
+                      {product.currentStock} / {product.minStock} unidades
                     </span>
                   </div>
                 </div>
