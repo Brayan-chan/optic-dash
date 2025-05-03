@@ -12,35 +12,35 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Reports() {
   // Mock data for sales chart
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
+  const months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun"];
   const data = [4500, 6000, 5200, 7800, 8500, 10200];
   const maxValue = Math.max(...data);
 
   // Mock data for summary metrics
   const metrics = [
-    { label: "Total Sales", value: "$42,200.00" },
-    { label: "Average Sale", value: "$125.75" },
-    { label: "Products Sold", value: "335" },
-    { label: "Customers Served", value: "187" },
+    { label: "Ventas Totales", value: "$42,200.00" },
+    { label: "Venta Promedio", value: "$125.75" },
+    { label: "Productos Vendidos", value: "335" },
+    { label: "Clientes Atendidos", value: "187" },
   ];
 
   return (
     <DashboardLayout>
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Reports</h1>
+          <h1 className="text-2xl font-bold">Reportes</h1>
           <div className="flex space-x-2">
             <Select defaultValue="6months">
               <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Select period" />
+                <SelectValue placeholder="Seleccionar período" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="30days">Last 30 days</SelectItem>
-                <SelectItem value="6months">Last 6 months</SelectItem>
-                <SelectItem value="1year">Last year</SelectItem>
+                <SelectItem value="30days">Últimos 30 días</SelectItem>
+                <SelectItem value="6months">Últimos 6 meses</SelectItem>
+                <SelectItem value="1year">Último año</SelectItem>
               </SelectContent>
             </Select>
-            <Button>Generate Report</Button>
+            <Button>Generar Reporte</Button>
           </div>
         </div>
 
@@ -59,14 +59,14 @@ export default function Reports() {
 
         <Tabs defaultValue="sales">
           <TabsList>
-            <TabsTrigger value="sales">Sales</TabsTrigger>
-            <TabsTrigger value="products">Products</TabsTrigger>
-            <TabsTrigger value="customers">Customers</TabsTrigger>
+            <TabsTrigger value="sales">Ventas</TabsTrigger>
+            <TabsTrigger value="products">Productos</TabsTrigger>
+            <TabsTrigger value="customers">Clientes</TabsTrigger>
           </TabsList>
           <TabsContent value="sales" className="mt-4">
             <Card>
               <CardHeader>
-                <CardTitle>Sales Overview</CardTitle>
+                <CardTitle>Resumen de Ventas</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="h-[300px] flex items-end justify-between">
@@ -92,7 +92,7 @@ export default function Reports() {
           <TabsContent value="products" className="mt-4">
             <Card>
               <CardHeader>
-                <CardTitle>Top Selling Products</CardTitle>
+                <CardTitle>Productos Más Vendidos</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
@@ -130,7 +130,7 @@ export default function Reports() {
                       <div>
                         <p className="font-medium">{product.name}</p>
                         <p className="text-sm text-gray-500">
-                          {product.sales} units sold
+                          {product.sales} unidades vendidas
                         </p>
                       </div>
                       <div className="text-right">
@@ -145,7 +145,7 @@ export default function Reports() {
           <TabsContent value="customers" className="mt-4">
             <Card>
               <CardHeader>
-                <CardTitle>Customer Insights</CardTitle>
+                <CardTitle>Insights de Clientes</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">

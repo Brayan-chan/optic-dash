@@ -16,15 +16,15 @@ const generateMockNotifications = (): Notification[] => [
   {
     id: "1",
     title: "Low Stock Alert",
-    message: "Frames XYZ-123 are running low (2 remaining)",
+    message: "Las monturas XYZ-123 están por agotarse (2 unidades restantes)",
     time: "10 min ago",
     type: "inventory",
     read: false,
   },
   {
     id: "2",
-    title: "Repair Ready",
-    message: "Repair #R-2023-45 for John Smith is ready for pickup",
+    title: "Reparación Lista",
+    message: "La reparación #R-2023-45 para John Smith está lista para recoger",
     time: "1 hour ago",
     type: "repair",
     read: false,
@@ -32,7 +32,7 @@ const generateMockNotifications = (): Notification[] => [
   {
     id: "3",
     title: "Upcoming Appointment",
-    message: "Sarah Johnson has an eye exam tomorrow at 2:30 PM",
+    message: "Sarah Johnson tiene una consulta de ojos mañana a las 14:30",
     time: "2 hours ago",
     type: "appointment",
     read: false,
@@ -40,7 +40,7 @@ const generateMockNotifications = (): Notification[] => [
   {
     id: "4",
     title: "Low Stock Alert",
-    message: "Contact lenses ABC-456 are running low (5 boxes remaining)",
+    message: "Los lentes de contacto ABC-456 están por agotarse (5 cajas restantes)",
     time: "3 hours ago",
     type: "inventory",
     read: true,
@@ -48,7 +48,7 @@ const generateMockNotifications = (): Notification[] => [
   {
     id: "5",
     title: "Upcoming Appointment",
-    message: "Michael Brown has a fitting today at 4:00 PM",
+    message: "Michael Brown tiene una prueba hoy a las 16:00",
     time: "Yesterday",
     type: "appointment",
     read: true,
@@ -106,7 +106,7 @@ export default function NotificationsDropdown() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-80 p-0">
         <div className="flex items-center justify-between p-3 border-b">
-          <h3 className="font-medium">Notifications</h3>
+          <h3 className="font-medium">Notificaciones</h3>
           <div className="flex gap-2">
             {notifications.some((n) => !n.read) && (
               <Button
@@ -115,7 +115,7 @@ export default function NotificationsDropdown() {
                 className="h-7 px-2 text-xs"
                 onClick={handleMarkAllAsRead}
               >
-                Mark all as read
+                Marcar todo como leído
               </Button>
             )}
             {notifications.length > 0 && (
@@ -126,7 +126,7 @@ export default function NotificationsDropdown() {
                 onClick={handleClearAll}
               >
                 <X className="h-3 w-3 mr-1" />
-                Clear all
+                Limpiar todo
               </Button>
             )}
           </div>
@@ -144,7 +144,7 @@ export default function NotificationsDropdown() {
             ))
           ) : (
             <div className="p-4 text-center text-gray-500">
-              No notifications
+              Sin notificaciones
             </div>
           )}
         </div>

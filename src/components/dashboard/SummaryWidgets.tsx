@@ -42,30 +42,30 @@ export default function SummaryWidgets() {
   // Mock data - in a real app, this would come from an API
   const summaryData = [
     {
-      title: "Total Sales",
+      title: "Ventas Totales",
       value: "$12,426",
-      change: "↑ 12% from last month",
+      change: "↑ 12% desde el mes pasado",
       icon: <DollarSign className="h-6 w-6" />,
       trend: "up" as const,
     },
     {
-      title: "Customers",
+      title: "Clientes",
       value: "2,340",
-      change: "↑ 5% from last month",
+      change: "↑ 5% desde el mes pasado",
       icon: <Users className="h-6 w-6" />,
       trend: "up" as const,
     },
     {
-      title: "Products",
+      title: "Productos",
       value: "540",
-      change: "→ No change",
+      change: "→ Sin cambios",
       icon: <ShoppingBag className="h-6 w-6" />,
       trend: "neutral" as const,
     },
     {
-      title: "Appointments",
+      title: "Citas",
       value: "38",
-      change: "↓ 2% from last month",
+      change: "↓ 2% desde el mes pasado",
       icon: <Calendar className="h-6 w-6" />,
       trend: "down" as const,
     },

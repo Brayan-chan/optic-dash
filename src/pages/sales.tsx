@@ -91,20 +91,20 @@ export default function Sales() {
     <DashboardLayout>
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Sales</h1>
+          <h1 className="text-2xl font-bold">Ventas</h1>
           <Button>
             <Plus className="h-4 w-4 mr-2" />
-            New Sale
+            Nueva Venta
           </Button>
         </div>
 
         <Card>
           <CardHeader className="pb-3">
             <div className="flex justify-between items-center">
-              <CardTitle>Sales History</CardTitle>
+              <CardTitle>Historial de Ventas</CardTitle>
               <div className="relative w-64">
                 <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input placeholder="Search sales..." className="pl-8" />
+                <Input placeholder="Buscar ventas..." className="pl-8" />
               </div>
             </div>
           </CardHeader>
@@ -114,22 +114,22 @@ export default function Sales() {
                 <thead>
                   <tr className="border-b">
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Customer
+                      Cliente
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Date
+                      Fecha
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Items
+                      Artículos
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
                       Total
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Status
+                      Estado
                     </th>
                     <th className="text-right py-3 px-4 font-medium text-sm">
-                      Actions
+                      Acciones
                     </th>
                   </tr>
                 </thead>
@@ -156,8 +156,9 @@ export default function Sales() {
                           {sale.status === "refunded" && (
                             <RefreshCcw className="h-3 w-3 mr-1 inline" />
                           )}
-                          {sale.status.charAt(0).toUpperCase() +
-                            sale.status.slice(1)}
+                          {sale.status === "completed" ? "Completada" : 
+                           sale.status === "pending" ? "Pendiente" : 
+                           "Devolvida"}
                         </Badge>
                       </td>
                       <td className="py-3 px-4 text-right">
@@ -182,11 +183,11 @@ export default function Sales() {
                             <DropdownMenuContent align="end">
                               <DropdownMenuItem>
                                 <Eye className="h-4 w-4 mr-2" />
-                                View details
+                                Ver detalles
                               </DropdownMenuItem>
                               <DropdownMenuItem>
                                 <FileText className="h-4 w-4 mr-2" />
-                                Generate receipt
+                                Generar recibo
                               </DropdownMenuItem>
                             </DropdownMenuContent>
                           </DropdownMenu>

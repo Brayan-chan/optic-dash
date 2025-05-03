@@ -11,11 +11,11 @@ export default function MedicalDashboard() {
     <DashboardLayout>
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Medical Dashboard</h1>
+          <h1 className="text-2xl font-bold">Panel Médico</h1>
           <Link to="/prescriptions/new">
             <Button>
               <Plus className="h-4 w-4 mr-2" />
-              New Prescription
+              Nueva Prescripción
             </Button>
           </Link>
         </div>
@@ -24,19 +24,19 @@ export default function MedicalDashboard() {
           <TodaysAppointments />
           <Card>
             <CardHeader>
-              <CardTitle>Quick Actions</CardTitle>
+              <CardTitle>Acciones Rápidas</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <Link to="/prescriptions/new" className="block w-full">
                 <Button variant="outline" className="w-full justify-start">
                   <FileText className="h-4 w-4 mr-2" />
-                  Register New Prescription
+                  Registrar Nueva Prescripción
                 </Button>
               </Link>
               <Link to="/appointments/new" className="block w-full">
                 <Button variant="outline" className="w-full justify-start">
                   <Plus className="h-4 w-4 mr-2" />
-                  Schedule New Appointment
+                  Programar Nueva Cita
                 </Button>
               </Link>
             </CardContent>

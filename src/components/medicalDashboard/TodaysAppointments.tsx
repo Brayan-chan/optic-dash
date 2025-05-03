@@ -35,7 +35,7 @@ export default function TodaysAppointments() {
       doctor: "Dr. Michael Wong",
       date: today,
       time: "11:30 AM",
-      reason: "Contact Lens Fitting",
+      reason: "Prueba de Lentes de Contacto",
       status: "scheduled",
     },
     {
@@ -44,7 +44,7 @@ export default function TodaysAppointments() {
       doctor: "Dr. Emily Chen",
       date: today,
       time: "2:00 PM",
-      reason: "Glasses Adjustment",
+      reason: "Ajuste de Lentes",
       status: "scheduled",
     },
     {
@@ -79,10 +79,10 @@ export default function TodaysAppointments() {
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle>Today's Appointments</CardTitle>
+        <CardTitle>Citas de Hoy</CardTitle>
         <Link to="/appointments">
           <Button variant="outline" size="sm">
-            View All
+            Ver Todas
           </Button>
         </Link>
       </CardHeader>
@@ -90,26 +90,26 @@ export default function TodaysAppointments() {
         <div className="overflow-x-auto">
           {todaysAppointments.length === 0 ? (
             <p className="text-center py-4 text-gray-500">
-              No appointments scheduled for today
+              No hay citas programadas para hoy
             </p>
           ) : (
             <table className="w-full">
               <thead>
                 <tr className="border-b">
                   <th className="text-left py-3 px-4 font-medium text-sm">
-                    Patient
+                    Paciente
                   </th>
                   <th className="text-left py-3 px-4 font-medium text-sm">
-                    Time
+                    Hora
                   </th>
                   <th className="text-left py-3 px-4 font-medium text-sm">
-                    Reason
+                    Motivo
                   </th>
                   <th className="text-left py-3 px-4 font-medium text-sm">
-                    Status
+                    Estado
                   </th>
                   <th className="text-right py-3 px-4 font-medium text-sm">
-                    Action
+                    Acción
                   </th>
                 </tr>
               </thead>
@@ -127,8 +127,7 @@ export default function TodaysAppointments() {
                         variant="outline"
                         className={getStatusColor(appointment.status)}
                       >
-                        {appointment.status.charAt(0).toUpperCase() +
-                          appointment.status.slice(1)}
+                        {appointment.status === 'scheduled' ? 'Programada' : appointment.status === 'completed' ? 'Completada' : 'Cancelada'}
                       </Badge>
                     </td>
                     <td className="py-3 px-4 text-right">
@@ -137,7 +136,7 @@ export default function TodaysAppointments() {
                       >
                         <Button size="sm" variant="ghost">
                           <FileText className="h-4 w-4 mr-1" />
-                          Prescription
+                          Prescripción
                         </Button>
                       </Link>
                     </td>

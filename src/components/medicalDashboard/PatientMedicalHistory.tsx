@@ -101,7 +101,7 @@ export default function PatientMedicalHistory() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Patient Medical History</CardTitle>
+        <CardTitle>Historial Médico del Paciente</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
@@ -110,7 +110,7 @@ export default function PatientMedicalHistory() {
               <div className="relative">
                 <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
                 <Input
-                  placeholder="Search patients..."
+                  placeholder="Buscar pacientes..."
                   className="pl-8"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
@@ -134,8 +134,7 @@ export default function PatientMedicalHistory() {
               <>
                 <div className="flex justify-between items-center mb-4">
                   <h3 className="font-medium">
-                    {patients.find((p) => p.id === selectedPatient)?.name}'s
-                    Records
+                    Historial de {patients.find((p) => p.id === selectedPatient)?.name}
                   </h3>
                   <Link
                     to={`/prescriptions/new?patient=${encodeURIComponent(
@@ -145,13 +144,13 @@ export default function PatientMedicalHistory() {
                   >
                     <Button size="sm">
                       <FileText className="h-4 w-4 mr-2" />
-                      New Prescription
+                      Nueva Prescripción
                     </Button>
                   </Link>
                 </div>
                 {filteredRecords.length === 0 ? (
                   <p className="text-center py-4 text-gray-500">
-                    No medical records found
+                    No se encontraron registros médicos
                   </p>
                 ) : (
                   <div className="space-y-3 max-h-[400px] overflow-y-auto">
@@ -167,8 +166,7 @@ export default function PatientMedicalHistory() {
                                 variant="outline"
                                 className={getTypeColor(record.type)}
                               >
-                                {record.type.charAt(0).toUpperCase() +
-                                  record.type.slice(1)}
+                                {record.type === 'examination' ? 'Examen' : record.type === 'prescription' ? 'Prescripción' : 'Procedimiento'}
                               </Badge>
                               <span className="text-sm text-gray-500">
                                 {record.date}
@@ -190,7 +188,7 @@ export default function PatientMedicalHistory() {
               </>
             ) : (
               <div className="flex items-center justify-center h-[400px] text-gray-500">
-                Select a patient to view their medical history
+                Seleccione un paciente para ver su historial médico
               </div>
             )}
           </div>

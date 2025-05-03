@@ -112,20 +112,20 @@ export default function Agreements() {
     <DashboardLayout>
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Agreement Management</h1>
+          <h1 className="text-2xl font-bold">Gestión de Acuerdos</h1>
           <Button>
             <Plus className="h-4 w-4 mr-2" />
-            Add Agreement
+            Agregar Acuerdo
           </Button>
         </div>
 
         <Card>
           <CardHeader className="pb-3">
             <div className="flex justify-between items-center">
-              <CardTitle>Company Agreements</CardTitle>
+              <CardTitle>Acuerdos de Empresas</CardTitle>
               <div className="relative w-64">
                 <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input placeholder="Search companies..." className="pl-8" />
+                <Input placeholder="Buscar empresas..." className="pl-8" />
               </div>
             </div>
           </CardHeader>
@@ -135,22 +135,22 @@ export default function Agreements() {
                 <thead>
                   <tr className="border-b">
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Company Name
+                      Nombre de Empresa
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Assigned Workers
+                      Trabajadores Asignados
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Available Credit
+                      Crédito Disponible
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Used Credit
+                      Crédito Utilizado
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Status
+                      Estado
                     </th>
                     <th className="text-right py-3 px-4 font-medium text-sm">
-                      Actions
+                      Acciones
                     </th>
                   </tr>
                 </thead>
@@ -192,7 +192,7 @@ export default function Agreements() {
                               : "bg-green-100 text-green-800"
                           }
                         >
-                          {agreement.isBlocked ? "Blocked" : "Active"}
+                          {agreement.isBlocked ? "Bloqueado" : "Activo"}
                         </Badge>
                       </td>
                       <td className="py-3 px-4 text-right">
@@ -201,7 +201,7 @@ export default function Agreements() {
                           size="icon"
                           className="h-8 w-8 mr-1"
                           onClick={() => handleDownloadReport(agreement.id)}
-                          title="Download Report"
+                          title="Descargar Reporte"
                         >
                           <Download className="h-4 w-4" />
                         </Button>
@@ -212,8 +212,8 @@ export default function Agreements() {
                           onClick={() => openBlockDialog(agreement)}
                           title={
                             agreement.isBlocked
-                              ? "Unblock Agreement"
-                              : "Block Agreement"
+                              ? "Desbloquear Acuerdo"
+                              : "Bloquear Acuerdo"
                           }
                         >
                           <Ban className="h-4 w-4" />
@@ -222,7 +222,7 @@ export default function Agreements() {
                           variant="ghost"
                           size="icon"
                           className="h-8 w-8"
-                          title="View Details"
+                          title="Ver Detalles"
                         >
                           <Eye className="h-4 w-4" />
                         </Button>
@@ -242,20 +242,20 @@ export default function Agreements() {
           <DialogHeader>
             <DialogTitle>
               {selectedAgreement?.isBlocked
-                ? "Unblock Agreement"
-                : "Block Agreement"}
+                ? "Desbloquear Acuerdo"
+                : "Bloquear Acuerdo"}
             </DialogTitle>
             <DialogDescription>
               {selectedAgreement?.isBlocked
-                ? "This will allow the company to use their credit again."
-                : "This will prevent the company from using their credit."}
+                ? "¿Está seguro de que desea desbloquear este acuerdo? Esto permitirá que la empresa utilice su crédito nuevamente."
+                : "¿Está seguro de que desea bloquear este acuerdo? Esto impedirá que la empresa utilice su crédito."}
             </DialogDescription>
           </DialogHeader>
 
           {selectedAgreement && (
             <div className="space-y-4 py-4">
               <div className="space-y-2">
-                <Label>Company</Label>
+                <Label>Empresa</Label>
                 <div className="font-medium">
                   {selectedAgreement.companyName}
                 </div>

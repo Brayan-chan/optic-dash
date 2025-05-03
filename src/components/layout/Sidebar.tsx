@@ -26,85 +26,85 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   {
-    title: "Dashboard",
+    title: "Panel de Control",
     href: "/dashboard",
     icon: <Home className="h-5 w-5" />,
   },
   {
-    title: "Medical Dashboard",
+    title: "Panel Médico",
     href: "/medical-dashboard",
     icon: <Stethoscope className="h-5 w-5" />,
   },
   {
-    title: "Customers",
+    title: "Clientes",
     href: "/customers",
     icon: <Users className="h-5 w-5" />,
     submenu: [
-      { title: "All Customers", href: "/customers" },
-      { title: "Add Customer", href: "/customers/new" },
+      { title: "Todos los Clientes", href: "/customers" },
+      { title: "Agregar Cliente", href: "/customers/new" },
     ],
   },
   {
-    title: "Products",
+    title: "Productos",
     href: "/products",
     icon: <ShoppingBag className="h-5 w-5" />,
     submenu: [
-      { title: "All Products", href: "/products" },
-      { title: "Add Product", href: "/products/new" },
+      { title: "Todos los Productos", href: "/products" },
+      { title: "Agregar Producto", href: "/products/new" },
     ],
   },
   {
-    title: "Appointments",
+    title: "Citas",
     href: "/appointments",
     icon: <Calendar className="h-5 w-5" />,
     submenu: [
-      { title: "All Appointments", href: "/appointments" },
-      { title: "Schedule New", href: "/appointments/new" },
+      { title: "Todas las Citas", href: "/appointments" },
+      { title: "Agendar Nueva", href: "/appointments/new" },
     ],
   },
   {
-    title: "Prescriptions",
+    title: "Prescripciones",
     href: "/prescriptions",
     icon: <FileSignature className="h-5 w-5" />,
     submenu: [
-      { title: "All Prescriptions", href: "/prescriptions" },
-      { title: "New Prescription", href: "/prescriptions/new" },
+      { title: "Todas las Prescripciones", href: "/prescriptions" },
+      { title: "Nueva Prescripción", href: "/prescriptions/new" },
     ],
   },
   {
-    title: "Sales",
+    title: "Ventas",
     href: "/sales",
     icon: <CreditCard className="h-5 w-5" />,
     submenu: [
-      { title: "All Sales", href: "/sales" },
-      { title: "New Sale", href: "/sales/new" },
+      { title: "Todas las Ventas", href: "/sales" },
+      { title: "Nueva Venta", href: "/sales/new" },
     ],
   },
   {
-    title: "Repairs",
+    title: "Reparaciones",
     href: "/repairs",
     icon: <Wrench className="h-5 w-5" />,
     submenu: [
-      { title: "All Repairs", href: "/repairs" },
-      { title: "New Repair", href: "/repairs/new" },
+      { title: "Todas las Reparaciones", href: "/repairs" },
+      { title: "Nueva Reparación", href: "/repairs/new" },
     ],
   },
   {
-    title: "Agreements",
+    title: "Acuerdos",
     href: "/agreements",
     icon: <FileText className="h-5 w-5" />,
     submenu: [
-      { title: "All Agreements", href: "/agreements" },
-      { title: "Add Agreement", href: "/agreements/new" },
+      { title: "Todos los Acuerdos", href: "/agreements" },
+      { title: "Agregar Acuerdo", href: "/agreements/new" },
     ],
   },
   {
-    title: "Reports",
+    title: "Informes",
     href: "/reports",
     icon: <BarChart3 className="h-5 w-5" />,
   },
   {
-    title: "Settings",
+    title: "Configuraciones",
     href: "/dashboard", // Redirect to dashboard for now
     icon: <Settings className="h-5 w-5" />,
   },
@@ -126,10 +126,10 @@ export default function Sidebar({ isOpen }: { isOpen: boolean }) {
     >
       <div className="h-16 flex items-center justify-center border-b border-gray-200">
         <h1 className={cn("font-bold text-xl", !isOpen && "md:hidden")}>
-          Optical Store
+          Tienda Óptica
         </h1>
         {!isOpen && (
-          <span className="hidden md:block font-bold text-xl">OS</span>
+          <span className="hidden md:block font-bold text-xl">TO</span>
         )}
       </div>
 

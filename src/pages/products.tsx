@@ -19,7 +19,7 @@ export default function Products() {
   const products: Product[] = [
     {
       id: "1",
-      name: "Designer Frames - Model X1",
+      name: "Monturas de Diseño - Modelo X1",
       category: "Frames",
       stock: 15,
       price: 199.99,
@@ -27,7 +27,7 @@ export default function Products() {
     },
     {
       id: "2",
-      name: "Contact Lens Solution 500ml",
+      name: "Solución para Lentes de Contacto 500ml",
       category: "Solutions",
       stock: 8,
       price: 24.99,
@@ -35,7 +35,7 @@ export default function Products() {
     },
     {
       id: "3",
-      name: "Cleaning Cloth Pack",
+      name: "Kit de Paños de Limpieza",
       category: "Accessories",
       stock: 4,
       price: 12.99,
@@ -43,7 +43,7 @@ export default function Products() {
     },
     {
       id: "4",
-      name: "Transition Lenses - Grade A",
+      name: "Lentes de Transición - Calidad A",
       category: "Lenses",
       stock: 0,
       price: 149.99,
@@ -51,7 +51,7 @@ export default function Products() {
     },
     {
       id: "5",
-      name: "Premium Sunglasses - UV Protection",
+      name: "Gafas de Sol Premium - Protección UV",
       category: "Sunglasses",
       stock: 22,
       price: 89.99,
@@ -76,17 +76,17 @@ export default function Products() {
     <DashboardLayout>
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Products</h1>
+          <h1 className="text-2xl font-bold">Productos</h1>
           <Button>
             <Plus className="h-4 w-4 mr-2" />
-            Add Product
+            Agregar Producto
           </Button>
         </div>
 
         <Card>
           <CardHeader className="pb-3">
             <div className="flex justify-between items-center">
-              <CardTitle>Product List</CardTitle>
+              <CardTitle>Lista de Productos</CardTitle>
               <div className="relative w-64">
                 <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
                 <Input placeholder="Search products..." className="pl-8" />
@@ -114,7 +114,7 @@ export default function Products() {
                       Status
                     </th>
                     <th className="text-right py-3 px-4 font-medium text-sm">
-                      Actions
+                      Acciones
                     </th>
                   </tr>
                 </thead>
@@ -125,7 +125,7 @@ export default function Products() {
                       <td className="py-3 px-4">
                         <Badge variant="outline">{product.category}</Badge>
                       </td>
-                      <td className="py-3 px-4">{product.stock} units</td>
+                      <td className="py-3 px-4">{product.stock} unidades</td>
                       <td className="py-3 px-4">${product.price.toFixed(2)}</td>
                       <td className="py-3 px-4">
                         <Badge

@@ -64,9 +64,9 @@ export default function RecentSales() {
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle>Recent Sales</CardTitle>
+        <CardTitle>Ventas Recientes</CardTitle>
         <Button variant="outline" size="sm">
-          View All
+          Ver Todas
         </Button>
       </CardHeader>
       <CardContent>
@@ -86,14 +86,14 @@ export default function RecentSales() {
                     variant="outline"
                     className={getStatusColor(sale.status)}
                   >
-                    {sale.status.charAt(0).toUpperCase() + sale.status.slice(1)}
+                    {sale.status === 'completed' ? 'Completada' : sale.status === 'pending' ? 'Pendiente' : 'Reembolsada'}
                   </Badge>
                 </div>
               </div>
               <div className="text-right">
                 <p className="font-medium">${sale.amount.toFixed(2)}</p>
                 <p className="text-sm text-gray-500">
-                  {sale.items} item{sale.items !== 1 ? "s" : ""}
+                  {sale.items} producto{sale.items !== 1 ? 's' : ''}
                 </p>
               </div>
             </div>

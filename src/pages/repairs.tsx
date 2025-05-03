@@ -39,9 +39,9 @@ export default function Repairs() {
   const [repairs, setRepairs] = useState<Repair[]>([
     {
       id: "1",
-      customer: "John Smith",
-      product: "Designer Frames - Model X1",
-      damageType: "Broken Frame",
+      customer: "Juan Smith",
+      product: "Monturas de Diseño - Modelo X1",
+      damageType: "Montura Rota",
       status: "pending",
       estimatedDelivery: "2023-06-20",
       saleId: "1",
@@ -49,16 +49,16 @@ export default function Repairs() {
     {
       id: "2",
       customer: "Sarah Johnson",
-      product: "Premium Sunglasses - UV Protection",
-      damageType: "Scratched Lens",
+      product: "Gafas de Sol Premium - Protección UV",
+      damageType: "Lente Rayado",
       status: "in-progress",
       estimatedDelivery: "2023-06-18",
     },
     {
       id: "3",
       customer: "Michael Brown",
-      product: "Transition Lenses - Grade A",
-      damageType: "Loose Hinge",
+      product: "Lentes de Transición - Calidad A",
+      damageType: "Pivote Suelto",
       status: "completed",
       estimatedDelivery: "2023-06-15",
       saleId: "3",
@@ -66,16 +66,16 @@ export default function Repairs() {
     {
       id: "4",
       customer: "Emily Davis",
-      product: "Designer Frames - Model X2",
-      damageType: "Bent Frame",
+      product: "Monturas de Diseño - Modelo X2",
+      damageType: "Montura Doblada",
       status: "pending",
       estimatedDelivery: "2023-06-22",
     },
     {
       id: "5",
       customer: "Robert Wilson",
-      product: "Reading Glasses - Standard",
-      damageType: "Missing Nose Pad",
+      product: "Gafas de Lectura - Estándar",
+      damageType: "Falta de Puentilla",
       status: "in-progress",
       estimatedDelivery: "2023-06-19",
       saleId: "5",
@@ -87,11 +87,11 @@ export default function Repairs() {
 
   // Mock data for sales
   const sales = [
-    { id: "1", reference: "SALE-001" },
-    { id: "2", reference: "SALE-002" },
-    { id: "3", reference: "SALE-003" },
-    { id: "4", reference: "SALE-004" },
-    { id: "5", reference: "SALE-005" },
+    { id: "1", reference: "VENTA-001" },
+    { id: "2", reference: "VENTA-002" },
+    { id: "3", reference: "VENTA-003" },
+    { id: "4", reference: "VENTA-004" },
+    { id: "5", reference: "VENTA-005" },
   ];
 
   const getStatusColor = (status: Repair["status"]) => {
@@ -110,9 +110,9 @@ export default function Repairs() {
   const getStatusLabel = (status: Repair["status"]) => {
     switch (status) {
       case "in-progress":
-        return "In Progress";
+        return "En Progreso";
       default:
-        return status.charAt(0).toUpperCase() + status.slice(1);
+        return status === "pending" ? "Pendiente" : "Completada";
     }
   };
 
@@ -148,20 +148,20 @@ export default function Repairs() {
     <DashboardLayout>
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Repairs</h1>
+          <h1 className="text-2xl font-bold">Reparaciones</h1>
           <Button>
             <Plus className="h-4 w-4 mr-2" />
-            New Repair
+            Nueva Reparación
           </Button>
         </div>
 
         <Card>
           <CardHeader className="pb-3">
             <div className="flex justify-between items-center">
-              <CardTitle>Repair List</CardTitle>
+              <CardTitle>Lista de Reparaciones</CardTitle>
               <div className="relative w-64">
                 <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input placeholder="Search repairs..." className="pl-8" />
+                <Input placeholder="Buscar reparaciones..." className="pl-8" />
               </div>
             </div>
           </CardHeader>
@@ -171,25 +171,25 @@ export default function Repairs() {
                 <thead>
                   <tr className="border-b">
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Customer
+                      Cliente
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Product
+                      Producto
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Damage Type
+                      Tipo de Daño
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Status
+                      Estado
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Est. Delivery
+                      Entrega Est.
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Sale Ref
+                      Ref. Venta
                     </th>
                     <th className="text-right py-3 px-4 font-medium text-sm">
-                      Actions
+                      Acciones
                     </th>
                   </tr>
                 </thead>

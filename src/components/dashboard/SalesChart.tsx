@@ -9,22 +9,22 @@ import {
 
 export default function SalesChart() {
   // Mock data - in a real app, this would come from an API and use a charting library
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
+  const months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun"];
   const data = [4500, 6000, 5200, 7800, 8500, 10200];
   const maxValue = Math.max(...data);
 
   return (
     <Card className="col-span-1 lg:col-span-2">
       <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle>Sales Overview</CardTitle>
+        <CardTitle>Resumen de Ventas</CardTitle>
         <Select defaultValue="6months">
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Select period" />
+            <SelectValue placeholder="Seleccionar período" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="30days">Last 30 days</SelectItem>
-            <SelectItem value="6months">Last 6 months</SelectItem>
-            <SelectItem value="1year">Last year</SelectItem>
+            <SelectItem value="30days">Últimos 30 días</SelectItem>
+            <SelectItem value="6months">Últimos 6 meses</SelectItem>
+            <SelectItem value="1year">Último año</SelectItem>
           </SelectContent>
         </Select>
       </CardHeader>

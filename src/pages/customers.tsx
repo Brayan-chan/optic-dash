@@ -69,20 +69,20 @@ export default function Customers() {
     <DashboardLayout>
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Customers</h1>
+          <h1 className="text-2xl font-bold">Clientes</h1>
           <Button>
             <Plus className="h-4 w-4 mr-2" />
-            Add Customer
+            Agregar Cliente
           </Button>
         </div>
 
         <Card>
           <CardHeader className="pb-3">
             <div className="flex justify-between items-center">
-              <CardTitle>Customer List</CardTitle>
+              <CardTitle>Lista de Clientes</CardTitle>
               <div className="relative w-64">
                 <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input placeholder="Search customers..." className="pl-8" />
+                <Input placeholder="Buscar clientes..." className="pl-8" />
               </div>
             </div>
           </CardHeader>
@@ -92,22 +92,22 @@ export default function Customers() {
                 <thead>
                   <tr className="border-b">
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Name
+                      Nombre
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Phone
+                      Teléfono
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
                       Email
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Balance
+                      Saldo
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Status
+                      Estado
                     </th>
                     <th className="text-right py-3 px-4 font-medium text-sm">
-                      Actions
+                      Acciones
                     </th>
                   </tr>
                 </thead>
@@ -129,8 +129,7 @@ export default function Customers() {
                               : "bg-gray-100 text-gray-800"
                           }
                         >
-                          {customer.status.charAt(0).toUpperCase() +
-                            customer.status.slice(1)}
+                          {customer.status === "active" ? "Activo" : "Inactivo"}
                         </Badge>
                       </td>
                       <td className="py-3 px-4 text-right">
@@ -162,7 +161,7 @@ export default function Customers() {
                             <DropdownMenuContent align="end">
                               <DropdownMenuItem>
                                 <User className="h-4 w-4 mr-2" />
-                                View details
+                                Ver detalles
                               </DropdownMenuItem>
                             </DropdownMenuContent>
                           </DropdownMenu>

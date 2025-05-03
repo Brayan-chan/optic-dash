@@ -37,7 +37,7 @@ export default function Appointments() {
   const appointments: Appointment[] = [
     {
       id: "1",
-      customer: "John Smith",
+      customer: "Juan Smith",
       doctor: "Dr. Emily Chen",
       date: "2023-06-15",
       time: "10:00 AM",
@@ -50,7 +50,7 @@ export default function Appointments() {
       doctor: "Dr. Michael Wong",
       date: "2023-06-15",
       time: "11:30 AM",
-      reason: "Contact Lens Fitting",
+      reason: "Ajuste de Lentes de Contacto",
       status: "scheduled",
     },
     {
@@ -59,7 +59,7 @@ export default function Appointments() {
       doctor: "Dr. Emily Chen",
       date: "2023-06-14",
       time: "2:00 PM",
-      reason: "Glasses Adjustment",
+      reason: "Ajuste de Gafas",
       status: "completed",
     },
     {
@@ -77,7 +77,7 @@ export default function Appointments() {
       doctor: "Dr. Emily Chen",
       date: "2023-06-16",
       time: "9:15 AM",
-      reason: "Vision Test",
+      reason: "Prueba de Visión",
       status: "scheduled",
     },
   ];
@@ -99,22 +99,22 @@ export default function Appointments() {
     <DashboardLayout>
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Appointments</h1>
+          <h1 className="text-2xl font-bold">Citas</h1>
           <Button>
             <Plus className="h-4 w-4 mr-2" />
-            Schedule Appointment
+            Agendar Cita
           </Button>
         </div>
 
         <Card>
           <CardHeader className="pb-3">
             <div className="flex justify-between items-center">
-              <CardTitle>Appointment List</CardTitle>
+              <CardTitle>Lista de Citas</CardTitle>
               <div className="flex space-x-2">
                 <div className="relative w-64">
                   <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
                   <Input
-                    placeholder="Search appointments..."
+                    placeholder="Buscar citas..."
                     className="pl-8"
                   />
                 </div>
@@ -130,22 +130,22 @@ export default function Appointments() {
                 <thead>
                   <tr className="border-b">
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Customer
+                      Cliente
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
                       Doctor
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Date & Time
+                      Fecha y Hora
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Reason
+                      Motivo
                     </th>
                     <th className="text-left py-3 px-4 font-medium text-sm">
-                      Status
+                      Estado
                     </th>
                     <th className="text-right py-3 px-4 font-medium text-sm">
-                      Actions
+                      Acciones
                     </th>
                   </tr>
                 </thead>
@@ -175,8 +175,9 @@ export default function Appointments() {
                           {appointment.status === "cancelled" && (
                             <X className="h-3 w-3 mr-1 inline" />
                           )}
-                          {appointment.status.charAt(0).toUpperCase() +
-                            appointment.status.slice(1)}
+                          {appointment.status === "scheduled" ? "Programada" : 
+                           appointment.status === "completed" ? "Completada" : 
+                           "Cancelada"}
                         </Badge>
                       </td>
                       <td className="py-3 px-4 text-right">
