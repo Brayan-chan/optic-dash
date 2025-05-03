@@ -69,9 +69,9 @@ export default function RecentAppointments() {
   return (
     <Card className="col-span-1 lg:col-span-2">
       <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle>Upcoming Appointments</CardTitle>
+        <CardTitle>Citas Próximas</CardTitle>
         <Button variant="outline" size="sm">
-          View All
+          Ver Todas
         </Button>
       </CardHeader>
       <CardContent>
@@ -80,19 +80,19 @@ export default function RecentAppointments() {
             <thead>
               <tr className="border-b">
                 <th className="text-left py-3 px-4 font-medium text-sm">
-                  Customer
+                  Cliente
                 </th>
                 <th className="text-left py-3 px-4 font-medium text-sm">
                   Doctor
                 </th>
                 <th className="text-left py-3 px-4 font-medium text-sm">
-                  Date & Time
+                  Fecha y Hora
                 </th>
                 <th className="text-left py-3 px-4 font-medium text-sm">
-                  Reason
+                  Motivo
                 </th>
                 <th className="text-left py-3 px-4 font-medium text-sm">
-                  Status
+                  Estado
                 </th>
               </tr>
             </thead>
@@ -110,8 +110,7 @@ export default function RecentAppointments() {
                       variant="outline"
                       className={getStatusColor(appointment.status)}
                     >
-                      {appointment.status.charAt(0).toUpperCase() +
-                        appointment.status.slice(1)}
+                      {appointment.status === 'scheduled' ? 'Programada' : appointment.status === 'completed' ? 'Completada' : 'Cancelada'}
                     </Badge>
                   </td>
                 </tr>
