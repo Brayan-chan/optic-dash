@@ -29,6 +29,13 @@ export default defineConfig({
     },
   },
   server: {
+    proxy: {
+      '/v2': {
+        target: 'https://optica-brayan-chan.aws-us-east-1.turso.io',
+        changeOrigin: true,
+        secure: false,
+      }
+    },
     // @ts-ignore
     allowedHosts: true,
   }
