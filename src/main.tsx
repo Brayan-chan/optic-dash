@@ -8,10 +8,21 @@ import { initializeDatabase } from "./lib/db";
 import { TempoDevtools } from "tempo-devtools";
 TempoDevtools.init();
 
-// Initialize the database
-initializeDatabase()
-  .then(() => console.log("Database setup complete"))
-  .catch((error) => console.error("Database setup failed:", error));
+import { testDatabaseConnection } from "./lib/db";
+
+// Test database connection first, then initialize if successful
+testDatabaseConnection()
+  .then((connected) => {
+    if (connected) {
+      console.log("🔌 Database connection successful, initializing tables...");
+      return initializeDatabase();
+    } else {
+      console.error("❌ Database connection failed, skipping initialization");
+      return Promise.reject("Database connection failed");
+    }
+  })
+  .then(() => console.log("✅ Database setup complete"))
+  .catch((error) => console.error("❌ Database setup failed:", error));
 
 const basename = import.meta.env.BASE_URL;
 
